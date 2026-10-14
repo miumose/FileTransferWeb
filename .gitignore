@@ -1,0 +1,31 @@
+# Runtime data
+/uploads/
+
+# Build output
+/phone-upload
+/phone-upload.exe
+/bin/
+/dist/
+*.test
+*.out
+*.prof
+*.pprof
+/coverage.*
+
+# Local configuration and logs
+.env
+.env.*
+!.env.example
+*.log
+
+# Editors
+/.idea/
+/.vscode/
+*.swp
+*.swo
+*~
+
+# Operating systems
+.DS_Store
+Thumbs.db
+Desktop.ini
