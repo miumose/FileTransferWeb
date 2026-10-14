@@ -55,6 +55,29 @@ go build -o phone-upload.exe .
 .\phone-upload.exe
 ```
 
+## 下载预编译版本
+
+在 GitHub 的 Releases 页面可以下载已编译好的二进制文件，无需安装 Go：
+
+| 系统 | 文件 |
+| --- | --- |
+| Windows x64 / ARM64 | `phone-upload_<版本>_windows_amd64.zip` / `..._windows_arm64.zip` |
+| Linux x64 / ARM64 | `phone-upload_<版本>_linux_amd64.tar.gz` / `..._linux_arm64.tar.gz` |
+| macOS Intel / Apple Silicon | `phone-upload_<版本>_darwin_amd64.tar.gz` / `..._darwin_arm64.tar.gz` |
+
+`SHA256SUMS.txt` 中提供了各文件的校验和。macOS 首次运行如被系统拦截，可执行 `xattr -d com.apple.quarantine ./phone-upload` 后再运行。
+
+### 发布新版本（维护者）
+
+推送 `v` 开头的标签即可触发 `.github/workflows/release.yml`，自动测试、交叉编译并创建 Release：
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+也可以在 GitHub 的 Actions 页面手动运行 `Release` 工作流并填写标签。
+
 ## 配置参数
 
 ```text
